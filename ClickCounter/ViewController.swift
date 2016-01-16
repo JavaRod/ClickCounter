@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         self.view.addSubview(button)
         
         button.addTarget(self, action: "incrementalCount", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: "changeColor", forControlEvents: UIControlEvents.TouchUpInside)
         
         //Decrement Button
         var decButton = UIButton()
@@ -46,6 +47,16 @@ class ViewController: UIViewController {
     func incrementalCount() {
         self.count++
         self.label.text = "\(self.count)"
+    }
+    
+    func changeColor() {
+     
+        if (self.view.backgroundColor == UIColor.whiteColor()) {
+            self.view.backgroundColor = UIColor.redColor()
+        } else {
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
+        
     }
     
     func decrementalCount() {
